@@ -64,7 +64,11 @@
 
 
 
-               <div v-for="contact in contacts" class="contatto flex relative">
+               <div
+                 v-for="(contact, i) in contacts"
+                 @click="openChat(i)"
+                 class="contatto flex relative"
+                 >
                   <img :src="contact.avatar" alt="">
                   <div class="box">
                      <p><strong>{{contact.name}}</strong></p>
@@ -147,6 +151,7 @@
                   </div>
                   <span>15:15</span>
                </div> -->
+
             </div>
 
          </section>
@@ -176,7 +181,37 @@
             <!-- MIDDLE -->
             <div class="middle">
                
-               <div class="box  flex">
+
+
+
+               <div 
+                  v-for="messaggio in contacts[nMessage].messages" 
+                  :class="{'received-mes': messaggio.status === 'received',
+                           'sended-mes': messaggio.status === 'sent'}"
+                  class="box flex"
+               >
+                  <div 
+                  :class="{'received': messaggio.status === 'received',
+                           'sended': messaggio.status === 'sent'}"
+                     class="message relative"
+                  >
+                     <p>{{messaggio.message}}</p>
+                     <div class="menu-tendina  absolute">
+                        <i class="fa-solid fa-chevron-down fa-2xs"></i>
+                        <ul class="pop-up  relative">
+                           <li><p><a href="">Info messaggio</a></p></li>
+                           <li><p><a href="">Cancella messaggio</a></p></li>
+                        </ul>                           
+                     </div>
+                     <span class="absolute">16:13</span>                              
+                  </div>
+               </div>
+
+
+
+
+
+               <!-- <div class="box sended-mes flex">
                   <div class="message sended  relative">
                      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit, voluptatibus maxime. Neque quia inventore aperiam quos cumque minus error ad perspiciatis. Doloremque ratione,nimi  nulla!</p>
                      <div class="menu-tendina  absolute">
@@ -190,7 +225,7 @@
                   </div>
                </div>
 
-               <div class="box  flex">
+               <div class="box flex">
                   <div class="message received  relative">
                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni voluptatem asperiores suscipit, quod magnam nobis. Excepturi eos aliquam, nemo temporibus perferendis vel id sit iure fuga?</p> 
                      <div class="menu-tendina  absolute">
@@ -202,7 +237,7 @@
                      </div>
                      <span class="absolute">16:15</span>
                   </div>
-               </div>
+               </div> -->
             </div>
 
             <!-- BOTTOM -->

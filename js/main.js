@@ -174,7 +174,7 @@ createApp({
             }
          ],
 
-
+         nMessage: 0,
 
       };
    },
@@ -184,9 +184,11 @@ createApp({
 
    // funzioni
    methods:{
-
       
-
+      // porta l'indice della chat cliccata nel v-for dei messaggi
+      openChat(indice){
+         this.nMessage = indice;
+      }
 
    },
 
@@ -194,7 +196,7 @@ createApp({
 
 
    monted(){
-      console.log(contacts)
+      
    }
 
 }).mount('#app');

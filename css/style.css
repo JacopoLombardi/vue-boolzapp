@@ -307,12 +307,13 @@ main{
    overflow-y: auto;
 }
 
-.middle .box:first-child{
+.middle .box.sended-mes{
    justify-content: end;
 }
 
 .middle .sended{
    background-color: var(--lightgreen-turn-darkgreen);
+   margin-top: 20px;
 }
 
 .middle .received{
