@@ -1,0 +1,44 @@
+
+
+/* ----------
+  DARK-MODE
+------------ */
+
+@media (prefers-color-scheme: dark){
+
+   :root{
+      --body-background-green: rgb(5, 77, 69);
+      --body-background-lightgrey: rgb(98, 98, 93);
+      --white-turn-lightblack: rgb(53, 53, 53);
+      --black-turn-white: rgb(240, 240, 240);
+      --lightgrey-turn-lightwhite: rgb(170, 170, 170);
+      --borderlightgrey-turn-darkgrey: rgb(98, 98, 98);
+      --background-top-turn-darkgrey: rgb(47, 47, 47);
+      --lightblue-turn-darkblue: rgb(60, 114, 139);
+      --lightwhite-turn-lightblack: rgb(44, 44, 44);
+      --lightgreen-turn-darkgreen: rgb(66, 114, 30);
+      --background-middle-turn-lightgrey: url(../img/background-chat.jpg);
+   }
+
+
+   .top img,
+   .lista-contatti .contatto img{
+      filter: opacity(80%);
+   }
+
+
+   .contatto:hover{
+      background-color: rgb(73, 73, 73);
+   }
+
+
+   .middle{
+      background-size: cover;
+   }
+
+
+   .right input[type=text]:focus{
+      border: 2px solid rgb(106, 106, 106);
+   }
+
+}
