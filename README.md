@@ -6,7 +6,7 @@ vue-boolzapp
 1. Copiare i file HTML e CSS dal vecchio esercizio.
 2. Importiamo la libreria dei contatti.
 3. Stampiamo i contatti dinamicamente tramite Js.
-4. 
-5. 
+4. Al click di un utente si mostrerà la chat corrispondente con tutti i messaggi.
+5. scrivendo nel campo imput e premendo invio il messaggio verrà visualizzato in chat.
 6. 
 7. 

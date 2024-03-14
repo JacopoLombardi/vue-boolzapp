@@ -174,8 +174,11 @@ createApp({
             }
          ],
 
-         nMessage: 0,
+         indiceContact: 0,
 
+         newMessage: '',
+
+         enter: '',
       };
    },
 
@@ -184,19 +187,41 @@ createApp({
 
    // funzioni
    methods:{
-      
+
       // porta l'indice della chat cliccata nel v-for dei messaggi
       openChat(indice){
-         this.nMessage = indice;
-      }
+         this.indiceContact = indice;
+      },
+
+
+
+      // inserire messaggi scritti dall'utente
+      userMessage(){ 
+         this.contacts[this.indiceContact].messages.push({
+            date: '',
+            message: this.newMessage,
+            status: 'sent'
+         })
+         console.log(this.newMessage);
+
+         // dopo 1s viene generata una risposta in automatico
+         setTimeout(() => {
+            this.contacts[this.indiceContact].messages.push({
+               date: '',
+               message: 'OK!',
+               status: 'received'
+            })
+         }, 1000);
+      },
+
+
+
 
    },
 
-
-
-
    monted(){
-      
+    
    }
+
 
 }).mount('#app');

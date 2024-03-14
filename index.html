@@ -185,14 +185,12 @@
 
 
                <div 
-                  v-for="messaggio in contacts[nMessage].messages" 
-                  :class="{'received-mes': messaggio.status === 'received',
-                           'sended-mes': messaggio.status === 'sent'}"
+                  v-for="messaggio in contacts[indiceContact].messages" 
+                  :class="messaggio.status === 'received' ? 'received-mes' : 'sended-mes'"
                   class="box flex"
                >
                   <div 
-                  :class="{'received': messaggio.status === 'received',
-                           'sended': messaggio.status === 'sent'}"
+                     :class="messaggio.status === 'received' ? 'received' : 'sended'"
                      class="message relative"
                   >
                      <p>{{messaggio.message}}</p>
@@ -203,7 +201,7 @@
                            <li><p><a href="">Cancella messaggio</a></p></li>
                         </ul>                           
                      </div>
-                     <span class="absolute">16:13</span>                              
+                     <span class="absolute">{{messaggio.date}}</span>                              
                   </div>
                </div>
 
@@ -238,12 +236,18 @@
                      <span class="absolute">16:15</span>
                   </div>
                </div> -->
+
             </div>
 
             <!-- BOTTOM -->
             <div class="bottom  flex">
                <i class="fa-regular fa-face-smile"></i>
-               <input type="text" placeholder="Scrivi un messaggio">
+               <input
+                  v-model="newMessage"
+                  @keyup.enter="userMessage()"
+                  type="text"
+                  placeholder="Scrivi un messaggio"
+               >
                <i class="fa-solid fa-microphone"></i>
             </div>
 
