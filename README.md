@@ -5,7 +5,7 @@ vue-boolzapp
 
 1. Copiare i file HTML e CSS dal vecchio esercizio.
 2. Importiamo la libreria dei contatti.
-3. 
+3. Stampiamo i contatti dinamicamente tramite Js.
 4. 
 5. 
 6. 

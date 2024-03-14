@@ -88,6 +88,13 @@ ul{
    border: 2px solid rgb(194, 194, 194);
 }
 
+.div_js{
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+}
+
+
 
 
 /* ---------
@@ -135,10 +142,12 @@ main{
 .macro.col.left{
    width: 380px;
    background-color: var(--white-turn-lightblack);
+   height: 80vh;
 }
 
 .macro.col.right{
    width: calc(100% - 380px);
+   height: 80vh;
 }
 
 .macro.col{
