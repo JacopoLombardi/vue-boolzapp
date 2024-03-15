@@ -9,4 +9,6 @@ vue-boolzapp
 4. Al click di un utente si mostrerà la chat corrispondente con tutti i messaggi.
 5. Scrivendo nel campo imput e premendo invio il messaggio verrà visualizzato in chat.
 6. Dopo il nostro messaggio, verrà inviato un messaggio in automatico dopo 1 secondo.
-7. 
+7. Se cerchiamo un utente nella barra di ricerca, il ciclo for stamperà solo gli utenti con la stringa digitata nel loro nome.
+8. Aggiungiamo l'ora corrente nei messaggi inviati e ricevuti tramite la libreria Luxon.
+9. 
