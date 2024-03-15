@@ -54,7 +54,11 @@
             <div class="search  flex">
                <div class="box  flex">
                   <div><i class="fa-solid fa-magnifying-glass"></i></div>
-                  <input type="text" placeholder="Cerca o inizia una nuova chat">
+                  <input
+                     v-model="searchUser"
+                     type="text"
+                     placeholder="Cerca o inizia una nuova chat"
+                  >
                </div>
             </div>
 
@@ -62,95 +66,19 @@
             <div class="lista-contatti">
 
 
-
-
                <div
-                 v-for="(contact, i) in contacts"
+                 v-for="(contact, i) in contactFiltered"
                  @click="openChat(i)"
                  class="contatto flex relative"
                  >
                   <img :src="contact.avatar" alt="">
                   <div class="box">
                      <p><strong>{{contact.name}}</strong></p>
-                     <p>Last message</p>
+                     <p>{{contact.messages[contact.messages.length - 1].message}}</p>
                   </div>
                   <span>16:05</span>
                </div>
 
-
-
-
-               <!-- <div class="contatto michele  flex relative">
-                  <img src="img/avatar_1.jpg" alt="">
-                  <div class="box">
-                     <p><strong>Michele</strong></p>
-                     <p>Lorem, ipsum dolor sit amet</p>
-                  </div>
-                  <span>16:05</span>
-               </div>
-
-               <div class="contatto fabio  flex relative">
-                  <img src="img/avatar_2.jpg" alt="">
-                  <div class="box">
-                     <p><strong>Fabio</strong></p>
-                     <p>Lorem, ipsum dolor sit amet</p>
-                  </div>
-                  <span>16:05</span>
-               </div>
-
-               <div class="contatto samuele  flex relative">
-                  <img src="img/avatar_3.jpg" alt="">
-                  <div class="box">
-                     <p><strong>Samuele</strong></p>
-                     <p>Lorem, ipsum dolor sit amet</p>
-                  </div>
-                  <span>16:03</span>
-               </div>
-
-               <div class="contatto alessandro  flex relative">
-                  <img src="img/avatar_4.jpg" alt="">
-                  <div class="box">
-                     <p><strong>Alessandro B.</strong></p>
-                     <p>Lorem, ipsum dolor sit amet</p>
-                  </div>
-                  <span>15:50</span>
-               </div>
-
-               <div class="contatto alessandro  flex relative">
-                  <img src="img/avatar_5.jpg" alt="">
-                  <div class="box">
-                     <p><strong>Alessandro L.</strong></p>
-                     <p>Lorem, ipsum dolor sit amet</p>
-                  </div>
-                  <span>15:45</span>
-               </div>
-
-               <div class="contatto claudia  flex relative">
-                  <img src="img/avatar_6.jpg" alt="">
-                  <div class="box">
-                     <p><strong>Claudia</strong></p>
-                     <p>Lorem, ipsum dolor sit amet</p>
-                  </div>
-                  <span>15:40</span>
-               </div>
-
-               <div class="contatto federico  flex relative">
-                  <img src="img/avatar_7.jpg" alt="">
-                  <div class="box">
-                     <p><strong>Federico</strong></p>
-                     <p>Lorem, ipsum dolor sit amet</p>
-                  </div>
-                  <span>15:22</span>
-               </div>
-
-               <div class="contatto davide  flex relative">
-                  <img src="img/avatar_8.jpg" alt="">
-                  <div class="box">
-                     <p><strong>Davide</strong></p>
-                     <p>Lorem, ipsum dolor sit amet</p>
-                  </div>
-                  <span>15:15</span>
-               </div> -->
 
             </div>
 
@@ -164,9 +92,9 @@
             <div class="top  flex">
 
                <div class="info-contatto  flex">
-                  <img src="img/avatar_1.jpg" alt="">
+                  <img :src="contacts[indiceContact].avatar" alt="">
                   <div class="box">
-                     <p><strong>Michele</strong></p>
+                     <p><strong>{{contacts[indiceContact].name}}</strong></p>
                      <p>Ultimo accesso oggi alle 16:26</p>
                   </div>
                </div>
@@ -181,7 +109,6 @@
             <!-- MIDDLE -->
             <div class="middle">
                
-
 
 
                <div 
@@ -206,36 +133,6 @@
                </div>
 
 
-
-
-
-               <!-- <div class="box sended-mes flex">
-                  <div class="message sended  relative">
-                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit, voluptatibus maxime. Neque quia inventore aperiam quos cumque minus error ad perspiciatis. Doloremque ratione,nimi  nulla!</p>
-                     <div class="menu-tendina  absolute">
-                        <i class="fa-solid fa-chevron-down fa-2xs"></i>
-                        <ul class="pop-up  relative">
-                           <li><p><a href="">Info messaggio</a></p></li>
-                           <li><p><a href="">Cancella messaggio</a></p></li>
-                        </ul>                           
-                     </div>
-                     <span class="absolute">16:13</span>                              
-                  </div>
-               </div>
-
-               <div class="box flex">
-                  <div class="message received  relative">
-                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni voluptatem asperiores suscipit, quod magnam nobis. Excepturi eos aliquam, nemo temporibus perferendis vel id sit iure fuga?</p> 
-                     <div class="menu-tendina  absolute">
-                        <i class="fa-solid fa-chevron-down fa-2xs"></i>
-                        <ul class="pop-up  relative">
-                           <li><p><a href="">Info messaggio</a></p></li>
-                           <li><p><a href="">Cancella messaggio</a></p></li>
-                        </ul>                           
-                     </div>
-                     <span class="absolute">16:15</span>
-                  </div>
-               </div> -->
 
             </div>
 

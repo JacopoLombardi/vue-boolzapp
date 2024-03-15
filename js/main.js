@@ -178,7 +178,7 @@ createApp({
 
          newMessage: '',
 
-         enter: '',
+         searchUser: '',
       };
    },
 
@@ -188,7 +188,7 @@ createApp({
    // funzioni
    methods:{
 
-      // porta l'indice della chat cliccata nel v-for dei messaggi
+      // prendo l'indice del contatto cliccato
       openChat(indice){
          this.indiceContact = indice;
       },
@@ -201,7 +201,7 @@ createApp({
             date: '',
             message: this.newMessage,
             status: 'sent'
-         })
+         });
          console.log(this.newMessage);
 
          // dopo 1s viene generata una risposta in automatico
@@ -210,14 +210,29 @@ createApp({
                date: '',
                message: 'OK!',
                status: 'received'
-            })
+            });
          }, 1000);
       },
 
 
 
-
    },
+
+
+
+
+    computed:{
+        // ricerca di un contatto
+        contactFiltered(){
+            return this.contacts.filter(contact => 
+                contact.name.toLowerCase().includes (this.searchUser.toLowerCase()));
+        },
+   },
+
+
+
+
+
 
    monted(){
     
