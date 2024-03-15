@@ -17,6 +17,8 @@ createApp({
          
          contacts,
 
+         clickedContact: '',
+
          indiceContact: 0,
 
          newMessage: '',
@@ -32,7 +34,7 @@ createApp({
    methods:{
 
       // prendo l'indice del contatto cliccato
-      openChat(indice){
+      caugthIndex(indice){
          this.indiceContact = indice;
       },
 
@@ -55,7 +57,14 @@ createApp({
                message: 'OK!',
                status: 'received'
             });
-         }, 3000);
+         }, 2000);
+      },
+
+
+
+      // eliminazione un messaggio
+      deleteMessage(indiceMessage){
+         this.contacts[this.indiceContact].messages.splice(indiceMessage, 1);
       },
 
    },

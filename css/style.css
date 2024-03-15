@@ -59,10 +59,10 @@ ul{
 .middle .message{
    width: 60%;
    height: auto;
-   padding: 15px 30px 40px 15px;
+   padding: 15px 30px 30px 15px;
    border-radius: 10px;
 }
-
+.contatto-bg,
 .contatto:hover{
    background-color: rgb(235, 235, 235);
    cursor: pointer;
@@ -75,8 +75,23 @@ ul{
    cursor: pointer;
 }
 
+.middle .message:hover .menu-tendina{
+   display: block;
+}
+
 .middle .menu-tendina:hover .pop-up{
    display: block;
+}
+
+.middle .pop-up li:hover{
+   transition: all 0.4s ease;
+   background-color: rgba(184, 184, 184, 0.894);
+   border-radius: 8px;
+}
+
+.middle .pop-up li:hover a{
+   color: rgb(71, 71, 71);
+   cursor: pointer;
 }
 
 .left input[type=text]:focus{
@@ -84,8 +99,8 @@ ul{
 }
 
 .right input[type=text]:focus{
-   outline: none;
-   border: 2px solid rgb(194, 194, 194);
+   outline: 2px solid rgb(194, 194, 194);
+   box-shadow: 0px 0px 4px 2px;
 }
 
 .div_js{
@@ -303,8 +318,9 @@ main{
 .middle{
    background-image: var(--background-middle-turn-lightgrey);
    height: calc(100% - 140px);
-   padding: 60px 40px;
+   padding: 10px 40px;
    overflow-y: auto;
+   font-size: 18px;
 }
 
 .middle .box.sended-mes{
@@ -313,12 +329,12 @@ main{
 
 .middle .sended{
    background-color: var(--lightgreen-turn-darkgreen);
-   margin-top: 20px;
+   margin: 10px 0;
 }
 
 .middle .received{
    background-color: var(--white-turn-lightblack);
-   margin-top: 20px;
+   margin: 10px 0;
 }
 
 .middle .fa-solid{
@@ -331,30 +347,32 @@ main{
 }
 
 .middle span{
-   font-size: 11px;
+   font-size: 12px;
    color: var(--lightgrey-turn-lightwhite);
-   bottom: 10px;
-   right: 10px;
+   bottom: 5px;
+   right: 15px;
 }
 
 .middle .menu-tendina{
    top: 0;
    right: 0;
+   display: none;
 }
 
 .middle .pop-up{
-   padding: 10px;
    background-color: var(--white-turn-lightblack);
    box-shadow: 1px 1px 15px 1px var(--lightgrey-turn-lightwhite);
    margin-right: 10px;
    display: none;
    z-index: 1;
+   border-radius: 8px;
 }
 
 .middle .pop-up a{
    text-decoration: none;
    color: rgb(125, 130, 132);
-   line-height: 170%;
+   line-height: 200%;
+   margin: 10px;
 }
 
 

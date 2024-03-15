@@ -11,4 +11,5 @@ vue-boolzapp
 6. Dopo il nostro messaggio, verrà inviato un messaggio in automatico dopo 1 secondo.
 7. Se cerchiamo un utente nella barra di ricerca, il ciclo for stamperà solo gli utenti con la stringa digitata nel loro nome.
 8. Aggiungiamo l'ora corrente nei messaggi inviati e ricevuti tramite la libreria Luxon.
-9. 
+9. Aggiungiamo la possibilità di poter cancellare un messaggio della chat tramite il pop-up. 
+10. Inseriamo l'ultimo messaggio di una chat nella preview dei contatti.

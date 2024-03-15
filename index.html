@@ -71,7 +71,8 @@
 
                <div
                  v-for="(contact, i) in contactFiltered"
-                 @click="openChat(i)"
+                 @click="caugthIndex(i), clickedContact = contact"
+                 :class="{'contatto-bg': contact === clickedContact}"
                  class="contatto flex relative"
                  >
                   <img :src="contact.avatar" alt="">
@@ -88,7 +89,7 @@
          </section>
 
 
-         <!-- MACRO.COL.LEFT -->
+         <!-- MACRO.COL.RIGHT -->
          <section class="macro col right">
             
             <!-- TOP -->
@@ -115,7 +116,7 @@
 
 
                <div 
-                  v-for="messaggio in contacts[indiceContact].messages" 
+                  v-for="(messaggio, i) in contacts[indiceContact].messages" 
                   :class="messaggio.status === 'received' ? 'received-mes' : 'sended-mes'"
                   class="box flex"
                >
@@ -125,10 +126,15 @@
                   >
                      <p>{{messaggio.message}}</p>
                      <div class="menu-tendina  absolute">
-                        <i class="fa-solid fa-chevron-down fa-2xs"></i>
+                        <i class="icon-pop fa-solid fa-chevron-down fa-2xs"></i>
                         <ul class="pop-up  relative">
-                           <li><p><a href="">Info messaggio</a></p></li>
-                           <li><p><a href="">Cancella messaggio</a></p></li>
+                           <li><a>Info messaggio</a></li>
+                           <li><a
+                                 @click="deleteMessage(i)"
+                                 >Cancella
+                                 messaggio
+                              </a>
+                           </li>
                         </ul>                           
                      </div>
                      <span class="absolute">{{messaggio.date}}</span>                              
