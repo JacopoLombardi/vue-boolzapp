@@ -19,6 +19,8 @@ createApp({
 
          clickedContact: '',
 
+         selectedContact: contacts[0],
+
          indiceContact: 0,
 
          newMessage: '',
@@ -34,8 +36,9 @@ createApp({
    methods:{
 
       // prendo l'indice del contatto cliccato
-      caugthIndex(indice){
+      caugthIndex(indice, contact){
          this.indiceContact = indice;
+         this.selectedContact = contact;
       },
 
 
@@ -57,7 +60,7 @@ createApp({
                message: 'OK!',
                status: 'received'
             });
-         }, 2000);
+         }, 1000);
       },
 
 
@@ -75,6 +78,7 @@ createApp({
     computed:{
         // ricerca di un contatto
         contactFiltered(){
+         console.log()
             return this.contacts.filter(contact => 
                 contact.name.toLowerCase().includes (this.searchUser.toLowerCase()));
         },
@@ -82,8 +86,8 @@ createApp({
 
 
 
-   monted(){
-    
+   mounted(){
+      
    }
 
 

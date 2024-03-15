@@ -71,7 +71,7 @@
 
                <div
                  v-for="(contact, i) in contactFiltered"
-                 @click="caugthIndex(i), clickedContact = contact"
+                 @click="caugthIndex(i, contact), clickedContact = contact"
                  :class="{'contatto-bg': contact === clickedContact}"
                  class="contatto flex relative"
                  >
@@ -96,9 +96,9 @@
             <div class="top  flex">
 
                <div class="info-contatto  flex">
-                  <img :src="contacts[indiceContact].avatar" alt="">
+                  <img :src="selectedContact.avatar" alt="">
                   <div class="box">
-                     <p><strong>{{contacts[indiceContact].name}}</strong></p>
+                     <p><strong>{{selectedContact.name}}</strong></p>
                      <p>Ultimo accesso oggi alle 16:26</p>
                   </div>
                </div>
@@ -116,7 +116,7 @@
 
 
                <div 
-                  v-for="(messaggio, i) in contacts[indiceContact].messages" 
+                  v-for="(messaggio, i) in selectedContact.messages" 
                   :class="messaggio.status === 'received' ? 'received-mes' : 'sended-mes'"
                   class="box flex"
                >
@@ -129,11 +129,7 @@
                         <i class="icon-pop fa-solid fa-chevron-down fa-2xs"></i>
                         <ul class="pop-up  relative">
                            <li><a>Info messaggio</a></li>
-                           <li><a
-                                 @click="deleteMessage(i)"
-                                 >Cancella
-                                 messaggio
-                              </a>
+                           <li><a @click="deleteMessage(i)">Cancella messaggio</a>
                            </li>
                         </ul>                           
                      </div>
