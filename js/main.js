@@ -68,6 +68,7 @@ createApp({
       // eliminazione un messaggio
       deleteMessage(indiceMessage){
          this.contacts[this.indiceContact].messages.splice(indiceMessage, 1);
+         console.log(this.contacts[this.indiceContact].messages)
       },
 
    },

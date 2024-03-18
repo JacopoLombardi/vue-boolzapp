@@ -78,7 +78,11 @@
                   <img :src="contact.avatar" alt="">
                   <div class="box">
                      <p><strong>{{contact.name}}</strong></p>
-                     <p>{{contact.messages[contact.messages.length - 1].message}}</p>
+                     <p 
+                        v-if="contact.messages.length != 0"
+                     >
+                        {{contact.messages[contact.messages.length - 1].message}}
+                     </p>
                   </div>
                   <span>16:05</span>
                </div>
