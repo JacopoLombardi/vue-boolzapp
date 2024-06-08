@@ -16,6 +16,10 @@ body{
    );
 }
 
+.border{
+   border: 1px solid rgba(186, 186, 186, 0.77);
+}
+
 img{
    max-width: 100%;
 }
